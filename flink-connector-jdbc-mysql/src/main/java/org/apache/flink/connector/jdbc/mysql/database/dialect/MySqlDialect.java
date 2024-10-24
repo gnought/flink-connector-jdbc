@@ -37,17 +37,17 @@ public class MySqlDialect extends AbstractDialect {
     private static final long serialVersionUID = 1L;
 
     // Define MAX/MIN precision of TIMESTAMP type according to Mysql docs:
-    // https://dev.mysql.com/doc/refman/8.0/en/fractional-seconds.html
+    // https://dev.mysql.com/doc/refman/8.4/en/fractional-seconds.html
     private static final int MAX_TIMESTAMP_PRECISION = 6;
     private static final int MIN_TIMESTAMP_PRECISION = 0;
 
     // Define MAX/MIN precision of DECIMAL type according to Mysql docs:
-    // https://dev.mysql.com/doc/refman/8.0/en/fixed-point-types.html
+    // https://dev.mysql.com/doc/refman/8.4/en/fixed-point-types.html
     private static final int MAX_DECIMAL_PRECISION = 65;
     private static final int MIN_DECIMAL_PRECISION = 1;
 
     // The JDBC option to enable execute multiple MySQL statements in batch mode:
-    // https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-connp-props-performance-extensions.html#cj-conn-prop_rewriteBatchedStatements
+    // https://dev.mysql.com/doc/connector-j/en/connector-j-connp-props-performance-extensions.html#cj-conn-prop_rewriteBatchedStatements
     private static final String REWRITE_BATCHED_STATEMENTS = "rewriteBatchedStatements";
 
     @Override
@@ -108,7 +108,7 @@ public class MySqlDialect extends AbstractDialect {
     @Override
     public Set<LogicalTypeRoot> supportedTypes() {
         // The data types used in Mysql are list at:
-        // https://dev.mysql.com/doc/refman/8.0/en/data-types.html
+        // https://dev.mysql.com/doc/refman/8.4/en/data-types.html
 
         // TODO: We can't convert BINARY data type to
         //  PrimitiveArrayTypeInfo.BYTE_PRIMITIVE_ARRAY_TYPE_INFO in

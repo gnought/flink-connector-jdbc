@@ -45,17 +45,17 @@ See how to link with it for cluster execution [here]({{< ref "docs/dev/configura
 
 A driver dependency is also required to connect to a specified database. Here are drivers currently supported:
 
-| Driver     | Group Id                   | Artifact Id            | JAR                                                                                                                               |
-|:-----------|:---------------------------|:-----------------------|:----------------------------------------------------------------------------------------------------------------------------------|
-| MySQL      | `mysql`                    | `mysql-connector-java` | [Download](https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/)                                                      |
-| Oracle     | `com.oracle.database.jdbc` | `ojdbc8`               | [Download](https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8)                                                    |
-| PostgreSQL | `org.postgresql`           | `postgresql`           | [Download](https://jdbc.postgresql.org/download/)                                                                                 |
-| Derby      | `org.apache.derby`         | `derby`                | [Download](http://db.apache.org/derby/derby_downloads.html)                                                                       |
-| SQL Server | `com.microsoft.sqlserver`  | `mssql-jdbc`           | [Download](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver16) |
-| CrateDB    | `io.crate`                 | `crate-jdbc`           | [Download](https://repo1.maven.org/maven2/io/crate/crate-jdbc/)                                                                   |
-| Db2        | `com.ibm.db2.jcc`          | `db2jcc`               | [Download](https://www.ibm.com/support/pages/download-db2-fix-packs-version-db2-linux-unix-and-windows)                           | 
-| Trino      | `io.trino`                 | `trino-jdbc`           | [Download](https://repo1.maven.org/maven2/io/trino/trino-jdbc/)                                                                   |
-| OceanBase  | `com.oceanbase`            | `oceanbase-client`     | [Download](https://repo1.maven.org/maven2/com/oceanbase/oceanbase-client/)                                                        |
+| Driver     | Group Id                   | Artifact Id         | JAR                                                                                                                               |
+|:-----------|:---------------------------|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------|
+| MySQL      | `mysql`                    | `mysql-connector-j` | [Download](https://repo.maven.apache.org/maven2/com/mysql/mysql-connector-j/)                                                     |
+| Oracle     | `com.oracle.database.jdbc` | `ojdbc8`            | [Download](https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8)                                                    |
+| PostgreSQL | `org.postgresql`           | `postgresql`        | [Download](https://jdbc.postgresql.org/download/)                                                                                 |
+| Derby      | `org.apache.derby`         | `derby`             | [Download](http://db.apache.org/derby/derby_downloads.html)                                                                       |
+| SQL Server | `com.microsoft.sqlserver`  | `mssql-jdbc`        | [Download](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver16) |
+| CrateDB    | `io.crate`                 | `crate-jdbc`        | [Download](https://repo1.maven.org/maven2/io/crate/crate-jdbc/)                                                                   |
+| Db2        | `com.ibm.db2.jcc`          | `db2jcc`            | [Download](https://www.ibm.com/support/pages/download-db2-fix-packs-version-db2-linux-unix-and-windows)                           |
+| Trino      | `io.trino`                 | `trino-jdbc`        | [Download](https://repo1.maven.org/maven2/io/trino/trino-jdbc/)                                                                   |
+| OceanBase  | `com.oceanbase`            | `oceanbase-client`  | [Download](https://repo1.maven.org/maven2/com/oceanbase/oceanbase-client/)                                                        |
 
 
 JDBC connector and drivers are not part of Flink's binary distribution. See how to link with them for cluster execution [here]({{< ref "docs/dev/configuration/overview" >}}).
@@ -245,7 +245,7 @@ Connector Options
       <td>yes</td>
       <td style="word-wrap: break-word;">(none)</td>
       <td>Duration</td>
-      <td>The max time to live for each rows in lookup cache after writing into the cache. 
+      <td>The max time to live for each rows in lookup cache after writing into the cache.
       "lookup.cache" must be set to "PARTIAL" to use this option. See the following <a href="#lookup-cache">Lookup Cache</a> section for more details. </td>
     </tr>
     <tr>
@@ -263,7 +263,7 @@ Connector Options
       <td>yes</td>
       <td style="word-wrap: break-word;">true</td>
       <td>Boolean</td>
-      <td>Whether to store an empty value into the cache if the lookup key doesn't match any rows in the table. 
+      <td>Whether to store an empty value into the cache if the lookup key doesn't match any rows in the table.
         "lookup.cache" must be set to "PARTIAL" to use this option.</td>
     </tr>
     <tr>
@@ -280,7 +280,7 @@ Connector Options
       <td>no</td>
       <td style="word-wrap: break-word;">always</td>
       <td>Enum Possible values: always, never</td>
-      <td>Fine-grained configuration to control filter push down. 
+      <td>Fine-grained configuration to control filter push down.
           Supported policies are:
           <ul>
             <li><code>always</code>: Always push the supported filters to database.</li>
@@ -707,7 +707,7 @@ Flink supports connect to several databases which uses dialect like MySQL, Oracl
 <table class="table table-bordered">
     <thead>
       <tr>
-        <th class="text-left"><a href="https://dev.mysql.com/doc/refman/8.0/en/data-types.html">MySQL type</a></th>
+        <th class="text-left"><a href="https://dev.mysql.com/doc/refman/8.4/en/data-types.html">MySQL type</a></th>
         <th class="text-left"><a href="https://docs.oracle.com/database/121/SQLRF/sql_elements001.htm#SQLRF30020">Oracle type</a></th>
         <th class="text-left"><a href="https://www.postgresql.org/docs/12/datatype.html">PostgreSQL type</a></th>
         <th class="text-left"><a href="https://crate.io/docs/crate/reference/en/master/general/ddl/data-types.html">CrateDB type</a></th>
@@ -801,7 +801,7 @@ Flink supports connect to several databases which uses dialect like MySQL, Oracl
       <td></td>
       <td></td>
       <td></td>
-      <td></td> 
+      <td></td>
       <td></td>
       <td></td>
       <td><code>BIGINT UNSIGNED</code></td>
@@ -849,9 +849,9 @@ Flink supports connect to several databases which uses dialect like MySQL, Oracl
         <code>NUMERIC(p, s)</code><br>
         <code>DECIMAL(p, s)</code></td>
       <td>
-        <code>SMALLINT</code><br> 
-        <code>FLOAT(s)</code><br> 
-        <code>DOUBLE PRECISION</code><br> 
+        <code>SMALLINT</code><br>
+        <code>FLOAT(s)</code><br>
+        <code>DOUBLE PRECISION</code><br>
         <code>REAL</code><br>
         <code>NUMBER(p, s)</code></td>
       <td>
@@ -984,7 +984,7 @@ Flink supports connect to several databases which uses dialect like MySQL, Oracl
         <code>RAW(s)</code><br>
         <code>BLOB</code></td>
       <td><code>BYTEA</code></td>
-      <td></td> 
+      <td></td>
       <td>
         <code>BINARY(n)</code><br>
         <code>VARBINARY(n)</code><br>
@@ -1004,7 +1004,7 @@ Flink supports connect to several databases which uses dialect like MySQL, Oracl
       <td></td>
       <td></td>
       <td><code>ARRAY</code></td>
-      <td><code>ARRAY</code></td> 
+      <td><code>ARRAY</code></td>
       <td></td>
       <td></td>
       <td><code>ARRAY</code></td>
